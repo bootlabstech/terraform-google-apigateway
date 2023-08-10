@@ -14,4 +14,8 @@ resource "google_api_gateway_api" "api_gw" {
   project = var.project_id
   provider = google-beta
   api_id = var.apigw_name
+    lifecycle {
+    ignore_changes = [labels]
+  }
 }
+
